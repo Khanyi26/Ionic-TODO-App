@@ -1,0 +1,9 @@
+<mat-list>
+  <mat-list-item *ngFor="let task of tasks">
+    <mat-checkbox (change)="toggleComplete(task.id)" [checked]="task.completed"></mat-checkbox>
+    <span [class.completed]="task.completed">{{ task.title }} - {{ task.description }}</span>
+    <button mat-icon-button (click)="deleteTask(task.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
